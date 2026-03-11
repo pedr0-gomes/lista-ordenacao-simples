@@ -9,7 +9,19 @@ Implemente void bubbleSort(int v[], int n) para ordenar em ordem crescente.
 /*
 Função principal do exercício
 */
-
+void bubbleSort(int v[],int n)
+{
+    for (int i = 0; i < n-1;i++)
+    {
+        for (int j = 0;j < n-i-1;j++)
+        {
+            if (v[j] > v[j+1])
+            {
+                swap(&v[j],&v[j+1]);
+            }
+        }
+    }
+}
 
 int main(void)
 {
@@ -23,6 +35,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v1,n);
     // chamada da função de ordenação
+    bubbleSort(v1,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v1,n);
 
@@ -30,6 +43,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v2,n);
     // chamada da função de ordenação
+    bubbleSort(v2,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v2,n);
 
@@ -37,6 +51,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v3,n);
     // chamada da função de ordenação
+    bubbleSort(v3,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v3,n);
 
@@ -44,6 +59,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v4,n);
     // chamada da função de ordenação
+    bubbleSort(v4,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v4,n);
 
