@@ -1,7 +1,6 @@
 /*
 Enunciado:
-Implemente void quickSort(int v[], int inicio,int fim) para ordenar diversos exemplos de vetores.
-
+Implementar função void quickSort(int v[],int inicio,int fim) e testar ordenação com diversos exemplos.
 */
 #include <stdio.h>
 #include <stdlib.h>
