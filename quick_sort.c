@@ -9,7 +9,31 @@ Implementar função void quickSort(int v[],int inicio,int fim) e testar ordena�
 /*
 Função principal do exercício
 */
+int particiona(int v[],int inicio,int fim)
+{
+    int m = inicio-1;
+    int pivo = v[fim];
+    for (int i = inicio;i < fim;i++)
+    {
+        if (v[i] <= pivo)
+        {
+            m++;
+            swap(&v[i],&v[m]);
+        }
+    }
+    swap(&v[m+1],&v[fim]);
+    return (m+1); 
+}
 
+void quickSort(int v[],int inicio,int fim)
+{
+    if (inicio < fim)
+    {
+        int pv = particiona(v,inicio,fim);
+        quickSort(v,inicio,pv-1);
+        quickSort(v,pv+1,fim);
+    }
+}
 int main(void)
 {
     int v1[] = {1,2,3,4,5,6,7,8,9,10};
@@ -22,6 +46,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v1,n);
     // chamada da função de ordenação
+    quickSort(v1,0,n-1);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v1,n);
 
@@ -29,6 +54,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v2,n);
     // chamada da função de ordenação
+    quickSort(v2,0,n-1);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v2,n);
 
@@ -36,6 +62,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v3,n);
     // chamada da função de ordenação
+    quickSort(v3,0,n-1);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v3,n);
 
@@ -43,6 +70,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v4,n);
     // chamada da função de ordenação
+    quickSort(v4,0,n-1);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v4,n);
 
