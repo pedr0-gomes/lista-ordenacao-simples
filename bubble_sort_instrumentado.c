@@ -1,6 +1,6 @@
 /*
 Enunciado:
- Implemente bubbleSortInstrumetado(int v[],int n) com:
+ Implemente bubbleSortInstrumentado(int v[],int n) com:
 • comparacoes++ a cada comparação
 • trocas++ a cada swap
 Imprima comparacoes e trocas ao final.
@@ -12,7 +12,24 @@ Imprima comparacoes e trocas ao final.
 /*
 Função principal do exercício
 */
-
+void bubbleSortInstrumentado(int v[],int n)
+{
+    int comparacoes = 0,trocas = 0;
+    for (int i = 0; i < n-1;i++)
+    {
+        for (int j = 0;j < n - i - 1;j++)
+        {
+            comparacoes++;
+            if (v[j] > v[j+1])
+            {
+                trocas++;
+                swap(&v[j],&v[j+1]);
+            }
+        }
+    }
+    printf("Numero de comparacoes = %d\n",comparacoes);
+    printf("Numero de trocas = %d\n",trocas);
+}
 int main(void)
 {
     int v1[] = {1,2,3,4,5,6,7,8,9,10};
@@ -25,6 +42,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v1,n);
     // chamada da função de ordenação
+    bubbleSortInstrumentado(v1,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v1,n);
 
@@ -32,6 +50,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v2,n);
     // chamada da função de ordenação
+    bubbleSortInstrumentado(v2,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v2,n);
 
@@ -39,6 +58,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v3,n);
     // chamada da função de ordenação
+    bubbleSortInstrumentado(v3,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v3,n);
 
@@ -46,6 +66,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v4,n);
     // chamada da função de ordenação
+    bubbleSortInstrumentado(v4,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v4,n);
 
