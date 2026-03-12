@@ -10,7 +10,25 @@ Explique (em comentário no código) por que isso melhora o melhor caso para O(n
 /*
 Função principal do exercício
 */
-
+void bubbleSortOptimizado(int v[],int n)
+{
+    for (int i = 0; i < n-1;i++)
+    {
+        int houve_troca = 0;
+        for (int j = 0;j < n - i - 1;j++)
+        {
+            if (v[j] > v[j+1])
+            {
+                swap(&v[j],&v[j+1]);
+                houve_troca = 1;
+            }
+        }
+        if (houve_troca == 0) 
+        {
+            break;
+        }
+    } 
+}
 int main(void)
 {
     int v1[] = {1,2,3,4,5,6,7,8,9,10};
@@ -23,6 +41,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v1,n);
     // chamada da função de ordenação
+    bubbleSortOptimizado(v1,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v1,n);
 
@@ -30,6 +49,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v2,n);
     // chamada da função de ordenação
+    bubbleSortOptimizado(v2,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v2,n);
 
@@ -37,6 +57,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v3,n);
     // chamada da função de ordenação
+    bubbleSortOptimizado(v3,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v3,n);
 
@@ -44,6 +65,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v4,n);
     // chamada da função de ordenação
+    bubbleSortOptimizado(v4,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v4,n);
 
