@@ -9,7 +9,24 @@ Implemente void selectionSort(int *V, int n) conforme a ideia de “selecionar o
 /*
 Função principal do exercício
 */
-
+void selectionSort(int *V,int n)
+{
+    for (int i = 0;i < n-1;i++)
+    {
+        int menor = i;
+        for (int j = i+1; j < n;j++)
+        {
+            if (V[j] < V[menor])
+            {
+                menor = j;
+            }
+        }
+        if ( i != menor)
+        {
+            swap(&V[i],&V[menor]);
+        }
+    }
+}
 int main(void)
 {
     int v1[] = {1,2,3,4,5,6,7,8,9,10};
@@ -22,6 +39,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v1,n);
     // chamada da função de ordenação
+    selectionSort(v1,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v1,n);
 
@@ -29,6 +47,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v2,n);
     // chamada da função de ordenação
+    selectionSort(v2,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v2,n);
 
@@ -36,6 +55,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v3,n);
     // chamada da função de ordenação
+    selectionSort(v3,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v3,n);
 
@@ -43,6 +63,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v4,n);
     // chamada da função de ordenação
+    selectionSort(v4,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v4,n);
 
