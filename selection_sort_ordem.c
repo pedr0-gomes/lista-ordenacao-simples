@@ -9,42 +9,47 @@ Adapte o Selection Sort para receber ordem(1 crescente, -1 decrescente). Mostre 
 /*
 Função principal do exercício
 */
+void selectionSortOrdem(int *V,int n,int ordem)
+{
+    for (int i = 0;i < n-1;i++)
+    {
+        int menor_maior = i;
+        for (int j = i+1; j < n;j++)
+        {
+            if (V[j] < V[menor_maior] && ordem == 1)
+            {
+                menor_maior = j;
+            }
+            if (V[j] > V[menor_maior] && ordem == -1)
+            {
+                menor_maior = j;
+            }
+        }
+        if ( i != menor_maior)
+        {
+            swap(&V[i],&V[menor_maior]);
+        }
+    }
+}
 
 int main(void)
 {
-    int v1[] = {1,2,3,4,5,6,7,8,9,10};
-    int v2[] = {10,9,8,7,6,5,4,3,2,1};
-    int v3[] = {5,8,5,1,3,7,5,4,2,9};
-    int v4[] = {3,1,4,5,2,9,8,7,10,6};
-    int n = 10;
-
-    printf("Teste 1:\n");
-    printf("Vetor Antes da Ordenação:\n");
-    imprimir_array(v1,n);
-    // chamada da função de ordenação
-    printf("Vetor Depois da Ordenação:\n");
-    imprimir_array(v1,n);
-
-    printf("Teste 2:\n");
-    printf("Vetor Antes da Ordenação:\n");
+    int n = 5;
+    int v[] = {10, 5, 8, 3, 1} ;  
+    
+    printf("Vetor original:\n");
+    imprimir_array(v,n);
+    
+    printf("Ordenação crescente:\n");
+    selectionSortOrdem(v,n,1);
+    imprimir_array(v,n);
+    
+    // resetando o vetor para a ordenação decrescente
+    int v2[] = {10, 5, 8, 3, 1};
+    printf("Ordenação decrescente:\n");
+    selectionSortOrdem(v2,n,-1);
     imprimir_array(v2,n);
-    // chamada da função de ordenação
-    printf("Vetor Depois da Ordenação:\n");
-    imprimir_array(v2,n);
-
-    printf("Teste 3:\n");
-    printf("Vetor Antes da Ordenação:\n");
-    imprimir_array(v3,n);
-    // chamada da função de ordenação
-    printf("Vetor Depois da Ordenação:\n");
-    imprimir_array(v3,n);
-
-    printf("Teste 4:\n");
-    printf("Vetor Antes da Ordenação:\n");
-    imprimir_array(v4,n);
-    // chamada da função de ordenação
-    printf("Vetor Depois da Ordenação:\n");
-    imprimir_array(v4,n);
+    
 
     return 0;
 }
