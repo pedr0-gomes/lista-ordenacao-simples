@@ -12,6 +12,20 @@ Implemente void insertionSort(int *V, int n) usando:
 /*
 Função principal do exercício
 */
+void insertionSort(int *V,int n)
+{
+    for (int i = 1;i < n;i++)
+    {
+        int chave = V[i];
+        int j = i;
+        while (j > 0 && chave < V[j-1])
+        {
+            V[j] = V[j-1];
+            j--;
+        }
+        V[j] = chave;
+    }
+}
 
 int main(void)
 {
@@ -25,6 +39,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v1,n);
     // chamada da função de ordenação
+    insertionSort(v1,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v1,n);
 
@@ -32,6 +47,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v2,n);
     // chamada da função de ordenação
+    insertionSort(v2,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v2,n);
 
@@ -39,6 +55,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v3,n);
     // chamada da função de ordenação
+    insertionSort(v3,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v3,n);
 
@@ -46,6 +63,7 @@ int main(void)
     printf("Vetor Antes da Ordenação:\n");
     imprimir_array(v4,n);
     // chamada da função de ordenação
+    insertionSort(v4,n);
     printf("Vetor Depois da Ordenação:\n");
     imprimir_array(v4,n);
 
