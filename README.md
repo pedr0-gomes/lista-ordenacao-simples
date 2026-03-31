@@ -1,4 +1,5 @@
 # lista-ordenacao-simples
+![Build](https://github.com/pedr0-gomes/lista-ordenacao-simples/actions/workflows/build.yml/badge.svg)
 > Implementação dos principais algoritmos de ordenação básica em C, com variantes instrumentadas e comparativas
 
 ## Sobre o projeto
