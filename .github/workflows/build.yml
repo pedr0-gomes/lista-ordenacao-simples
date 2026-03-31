@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar GCC
+        run: sudo apt-get install -y gcc
+
+      - name: Build e execução
+        run: |
+          gcc -Wall -Wextra bubble_sort.c sorting.c -o t && ./t
+          gcc -Wall -Wextra bubble_sort_instrumentado.c sorting.c -o t && ./t
+          gcc -Wall -Wextra bubble_sort_optimizado.c sorting.c -o t && ./t
+          gcc -Wall -Wextra bubble_sort_comparativo.c sorting.c -o t && ./t
+          gcc -Wall -Wextra bubble_sort_ordem.c sorting.c -o t && ./t
+          gcc -Wall -Wextra selection_sort.c sorting.c -o t && ./t
+          gcc -Wall -Wextra selection_sort_tracado.c sorting.c -o t && ./t
+          gcc -Wall -Wextra selection_sort_metricas.c sorting.c -o t && ./t
+          gcc -Wall -Wextra selection_sort_ordem.c sorting.c -o t && ./t
+          gcc -Wall -Wextra insertion_sort.c sorting.c -o t && ./t
+          gcc -Wall -Wextra insertion_sort_tracado.c sorting.c -o t && ./t
+          gcc -Wall -Wextra insertion_sort_instrumentado.c sorting.c -o t && ./t
+          gcc -Wall -Wextra merge_sort.c sorting.c -o t && ./t
+          gcc -Wall -Wextra quick_sort.c sorting.c -o t && ./t
